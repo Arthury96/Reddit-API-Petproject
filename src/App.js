@@ -3,21 +3,24 @@ import Reddit from "./components/Reddit";
 
 function App() {
   const [reddits, setReddits] = useState([]);
-  const [subreddits, setSubreddits] = useState("web");
+  const [subreddits, setSubreddits] = useState("popular");
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/" + subreddits + ".json").then((res) => {
-      if (res.status != 200) {
-        console.log("Something goes wrong :(");
-        return;
-      }
-
-      res.json().then((data) => {
-        if (data != null) {
-          setReddits(data.data.children);
+    fetch("https://www.reddit.com/r/" + subreddits + "/hot.json").then(
+      (res) => {
+        if (res.status != 200) {
+          console.log("Something goes wrong :(");
+          return;
         }
-      });
-    });
+
+        res.json().then((data) => {
+          if (data != null) {
+            setReddits(data.data.children);
+            console.log(data);
+          }
+        });
+      }
+    );
   }, [subreddits]);
 
   return (
