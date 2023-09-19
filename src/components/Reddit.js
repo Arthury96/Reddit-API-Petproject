@@ -9,20 +9,17 @@ function Reddit(props) {
           {props.reddit.score} | {props.reddit.title} | {props.reddit.author} |{" "}
           {props.reddit.num_comments}
         </h3>
-        <p>{props.reddit.selftext}</p>
-        {props.reddit.media ? (
-          <video
-            controls
-            src={props.reddit.media.reddit_video.fallback_url}
-          ></video>
+        {props.reddit.selftext.length < 300 ? (
+          <p>{props.reddit.selftext} </p>
         ) : null}
+
+        {props.reddit.media ? <p>Contain Video!</p> : null}
 
         {props.reddit.post_hint === "image" ? (
           <img src={props.reddit.url}></img>
         ) : null}
-
-        {props.reddit.post_hint === "link" ? (
-          <a href={props.reddit.url}></a>
+        {!props.reddit.thumbnail ? (
+          <a href={props.reddit.url}>Link {props.reddit.domain}</a>
         ) : null}
       </a>
     </div>
