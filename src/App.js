@@ -5,7 +5,7 @@ import Genre from "./components/Genre";
 function App() {
   const [reddits, setReddits] = useState([]);
   const [subreddits, setSubreddits] = useState("popular");
-  const [genre, setGenre] = useState("");
+  const [genres, setGenre] = useState([]);
 
   useEffect(() => {
     fetch("https://www.reddit.com/r/" + subreddits + "/hot.json").then(
@@ -18,25 +18,25 @@ function App() {
         res.json().then((data) => {
           if (data != null) {
             setReddits(data.data.children);
-            console.log(data);
           }
         });
       }
     );
+  }, [subreddits]);
 
-    // fetch("https://www.reddit.com/r/subreddit.json").then((res) => {
-    //   if (res.status != 200) {
-    //     console.log("Something goes wrong :(");
-    //     return;
-    //   }
+  useEffect(() => {
+    fetch("https://www.reddit.com/subreddits.json").then((res) => {
+      if (res.status != 200) {
+        console.log("Something goes wrong :(");
+        return;
+      }
 
-    //   res.json().then((data) => {
-    //     if (data != null) {
-    //       setGenre(data.data.children);
-    //       console.log(data);
-    //     }
-    //   });
-    // });
+      res.json().then((data) => {
+        if (data != null) {
+          setGenre(data.data.children);
+        }
+      });
+    });
   }, [subreddits]);
 
   return (
@@ -47,6 +47,17 @@ function App() {
         value={subreddits}
         onChange={(e) => setSubreddits(e.target.value)}
       />
+      <div className="genres">
+        {genres != null
+          ? genres.map((genre, index) => (
+              <Genre
+                key={index}
+                genre={genre.data}
+                setSubreddits={setSubreddits}
+              />
+            ))
+          : ""}
+      </div>
       <div className="reddits">
         {reddits != null
           ? reddits.map((reddit, index) => (
@@ -54,13 +65,6 @@ function App() {
             ))
           : ""}
       </div>
-      {/* <div className="reddits">
-        {genre != null
-          ? reddits.map((genre, index) => (
-              <Genre key={index} genre={genre.data} />
-            ))
-          : ""}
-      </div> */}
     </div>
   );
 }
