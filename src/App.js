@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Reddit from "./components/Reddit";
-import Genre from "./components/Genre";
+import SubredditList from "./components/SubredditList";
 
 function App() {
   const [reddits, setReddits] = useState([]);
   const [subreddits, setSubreddits] = useState("popular");
-  const [genres, setGenre] = useState([]);
+  const [subredditList, setSubredditList] = useState([]);
 
   useEffect(() => {
     fetch("https://www.reddit.com/r/" + subreddits + "/hot.json").then(
@@ -33,7 +33,7 @@ function App() {
 
       res.json().then((data) => {
         if (data != null) {
-          setGenre(data.data.children);
+          setSubredditList(data.data.children);
         }
       });
     });
@@ -48,11 +48,11 @@ function App() {
         onChange={(e) => setSubreddits(e.target.value)}
       />
       <div className="genres">
-        {genres != null
-          ? genres.map((genre, index) => (
-              <Genre
+        {subredditList != null
+          ? subredditList.map((list, index) => (
+              <SubredditList
                 key={index}
-                genre={genre.data}
+                list={list.data}
                 setSubreddits={setSubreddits}
               />
             ))
