@@ -1,0 +1,23 @@
+.subreddit {
+  background-color: rgb(31, 66, 100);
+  color: white;
+  height: 50px;
+  width: 250px;
+  border: 1px solid rgb(124, 124, 124);
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px rgb(122, 122, 122);
+  margin: 10px;
+  padding: 5px;
+}
+
+.subreddit:hover {
+  background: linear-gradient(to right, rgb(203, 230, 243), white);
+  border: 1px solid rgb(223, 223, 223);
+  color: rgb(0, 0, 0);
+}
+
+.subreddit h3 {
+  position: relative;
+
+  left: 20px;
+}

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Reddit from "./components/Reddit";
 import SubredditList from "./components/SubredditList";
+import "./styles/App.css";
+import reddit from "./styles/reddit2.png";
 
 function App() {
   const [reddits, setReddits] = useState([]);
@@ -40,31 +42,37 @@ function App() {
   }, [subreddits]);
 
   return (
-    <div className="header">
-      <input
-        type="text"
-        className="input"
-        value={subreddits}
-        onChange={(e) => setSubreddits(e.target.value)}
-      />
-      <div className="genres">
-        {subredditList != null
-          ? subredditList.map((list, index) => (
-              <SubredditList
-                key={index}
-                list={list.data}
-                setSubreddits={setSubreddits}
-              />
-            ))
-          : ""}
-      </div>
-      <div className="reddits">
-        {reddits != null
-          ? reddits.map((reddit, index) => (
-              <Reddit key={index} reddit={reddit.data} />
-            ))
-          : ""}
-      </div>
+    <div className="main">
+      <header className="header">
+        <img src={reddit} alt="BigCo Inc. logo" />
+        <p>Reddit Lite</p>
+        <input
+          type="text"
+          className="input"
+          value={subreddits}
+          onChange={(e) => setSubreddits(e.target.value)}
+        />
+      </header>
+      <section className="content">
+        <section className="reddits">
+          {reddits != null
+            ? reddits.map((reddit, index) => (
+                <Reddit key={index} reddit={reddit.data} />
+              ))
+            : ""}
+        </section>
+        <section className="subreddit-list">
+          {subredditList != null
+            ? subredditList.map((list, index) => (
+                <SubredditList
+                  key={index}
+                  list={list.data}
+                  setSubreddits={setSubreddits}
+                />
+              ))
+            : ""}
+        </section>
+      </section>
     </div>
   );
 }

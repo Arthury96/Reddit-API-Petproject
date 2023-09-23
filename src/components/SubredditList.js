@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Genre.css";
 
 function Genre(props) {
   console.log(props);
@@ -8,10 +9,11 @@ function Genre(props) {
   };
 
   return (
-    <div>
-      <a onClick={() => props.setSubreddits(removePrefix())}>
-        <h3>{props.list.display_name_prefixed}</h3>
-      </a>
+    <div
+      className="subreddit"
+      onClick={() => props.setSubreddits(removePrefix())}
+    >
+      <h3>{props.list.display_name_prefixed}</h3>
     </div>
   );
 }
