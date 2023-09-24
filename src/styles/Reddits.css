@@ -1,7 +1,20 @@
 a img {
-  width: 80%;
+  width: 100%;
 }
 
-.reddits {
+.reddit {
+  display: grid;
+  grid-template-columns: 50px repeat(4, auto);
+  align-items: center;
   margin: 50px;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 45px;
+  background-color: rgb(31, 66, 100);
+  color: white;
+}
+.reddit-content {
+  background-color: white;
+  border-radius: 45px;
+  padding: 30px;
 }

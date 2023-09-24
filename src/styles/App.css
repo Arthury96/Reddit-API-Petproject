@@ -18,6 +18,7 @@ body {
 
 .content {
   display: flex;
+
   justify-content: space-between;
   align-items: baseline;
   padding: 30px;
@@ -68,8 +69,8 @@ body {
 .subreddit-list {
   display: flex;
   flex-direction: column;
-  position: sticky;
-  top: 0px;
+  position: relative;
+  top: -100px;
 
   padding: 25px;
 
@@ -82,4 +83,39 @@ body {
 }
 
 .reddits {
+}
+
+@media only screen and (max-width: 1200px) {
+  .subreddit-list {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .header {
+    height: 120px;
+    width: auto;
+
+    display: flex;
+    position: sticky;
+    top: 0px;
+    margin: 0 auto;
+    border-radius: 0;
+  }
+  .header input {
+    height: 30px;
+    width: 150px;
+    font-size: 30px;
+    appearance: none;
+    border: none;
+    outline: none;
+    border: 0.2em solid #ffffff;
+    background: rgba(#ffffff, 0.2);
+    border-radius: 45px;
+    padding: 0.4em;
+    color: #5c5656;
+  }
+  .main {
+    width: ;
+  }
 }
