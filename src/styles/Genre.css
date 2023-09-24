@@ -11,13 +11,21 @@
 }
 
 .subreddit:hover {
-  background: linear-gradient(to right, rgb(203, 230, 243), white);
+  background-color: rgb(202, 212, 223);
   border: 1px solid rgb(223, 223, 223);
   color: rgb(0, 0, 0);
+  transition: background-color 0.5s, color 0.5s, border 1s;
 }
 
 .subreddit h3 {
   position: relative;
 
   left: 20px;
+}
+
+.subreddit-list {
+  position: sticky;
+  top: 0px;
+
+  overflow-x: none;
 }

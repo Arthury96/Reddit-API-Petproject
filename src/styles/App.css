@@ -12,7 +12,7 @@ body {
 .main {
   justify-content: space-around;
 
-  background-color: rgb(171, 171, 179);
+  background-color: rgb(255, 255, 255);
   color: black;
 }
 
@@ -24,13 +24,19 @@ body {
 }
 
 .header {
+  border: 0px solid white;
+  border-radius: 45px;
   width: 500px;
   height: 80px;
   display: flex;
+  position: sticky;
+  top: 15px;
   align-items: center;
   justify-content: left;
   padding-left: 80px;
-  background-color: aqua;
+  margin-left: 100px;
+  margin-top: 30px;
+  background-color: rgb(31, 66, 100);
 }
 
 .header img {
@@ -39,19 +45,40 @@ body {
 
 .header p {
   padding: 10px;
+  color: white;
 }
 
 .header input {
+  font-size: 18px;
+  appearance: none;
+  border: none;
+  outline: none;
+  border: 0.2em solid #ffffff;
+  background: rgba(#ffffff, 0.2);
+  border-radius: 20px;
+  padding: 0.4em;
+  color: #5c5656;
+}
+
+.header input:hover {
+  color: #000000;
+  transition: color 0.5s;
 }
 
 .subreddit-list {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0px;
 
   padding: 25px;
 
   background-color: rgb(31, 66, 100);
   border: solid 1px black;
   border-radius: 35px;
+}
+
+.subreddit-list:hover {
 }
 
 .reddits {
