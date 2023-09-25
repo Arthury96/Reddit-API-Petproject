@@ -1,5 +1,5 @@
 .subreddit {
-  background-color: rgb(31, 66, 100);
+  background-color: #1f4264;
   color: white;
   height: 50px;
   width: 250px;
@@ -19,13 +19,5 @@
 
 .subreddit h3 {
   position: relative;
-
   left: 20px;
-}
-
-.subreddit-list {
-  position: sticky;
-  top: 0px;
-
-  overflow-x: none;
 }

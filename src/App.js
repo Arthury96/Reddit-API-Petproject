@@ -5,20 +5,23 @@ import "./styles/App.css";
 import reddit from "./styles/reddit2.png";
 
 function App() {
+  // states of all componens
+
   const [reddits, setReddits] = useState([]);
   const [subreddits, setSubreddits] = useState("popular");
   const [subredditList, setSubredditList] = useState([]);
 
+  // fetch method for getting data without authorization
   useEffect(() => {
     fetch("https://www.reddit.com/r/" + subreddits + "/hot.json").then(
       (res) => {
-        if (res.status != 200) {
+        if (res.status !== 200) {
           console.log("Something goes wrong :(");
           return;
         }
 
         res.json().then((data) => {
-          if (data != null) {
+          if (data !== null) {
             setReddits(data.data.children);
           }
         });
@@ -28,13 +31,13 @@ function App() {
 
   useEffect(() => {
     fetch("https://www.reddit.com/subreddits.json").then((res) => {
-      if (res.status != 200) {
+      if (res.status !== 200) {
         console.log("Something goes wrong :(");
         return;
       }
 
       res.json().then((data) => {
-        if (data != null) {
+        if (data !== null) {
           setSubredditList(data.data.children);
         }
       });
@@ -44,7 +47,7 @@ function App() {
   return (
     <div className="main">
       <header className="header">
-        <img src={reddit} alt="BigCo Inc. logo" />
+        <img src={reddit} alt="Reddit" />
         <p>Reddit Lite</p>
         <input
           type="text"

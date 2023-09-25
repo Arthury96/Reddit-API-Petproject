@@ -2,19 +2,88 @@ a img {
   width: 100%;
 }
 
+.reddit,
+.reddit-content {
+  padding: 30px;
+}
+
 .reddit {
   display: grid;
   grid-template-columns: 50px repeat(4, auto);
   align-items: center;
   margin: 50px;
-  padding: 30px;
-  border: 1px solid black;
+  border: 3px solid rgb(71, 69, 85);
   border-radius: 45px;
+  box-shadow: 3px 3px 3px rgb(46, 46, 46);
   background-color: rgb(31, 66, 100);
   color: white;
 }
 .reddit-content {
   background-color: white;
   border-radius: 45px;
-  padding: 30px;
+}
+
+.reddit-content,
+.link-content,
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.author,
+.comments {
+  font-size: 12px;
+}
+
+.link-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.video,
+.comments,
+.link {
+  border-radius: 25px;
+}
+
+.video {
+  border: 1px solid black;
+
+  padding: 15px 35px;
+  width: 115px;
+}
+
+.comments {
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0);
+
+  padding: 7px 12px;
+  width: 110px;
+  margin: 10px 0;
+}
+
+.video:hover,
+.comments:hover,
+.link {
+  background-color: rgb(206, 206, 206);
+  border: 1px solid rgb(206, 206, 206);
+}
+
+.video:hover,
+.comments:hover,
+.link:hover {
+  transition: background-color 0.2s, border 0.2s;
+}
+
+.link {
+  display: block;
+  width: 185px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.link:hover {
+  border: 1px solid rgb(126, 125, 125);
+  background-color: rgb(184, 184, 184);
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Genre.css";
+import "../styles/SubredditList.css";
 
 function Genre(props) {
   console.log(props);

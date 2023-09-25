@@ -11,14 +11,12 @@ body {
 
 .main {
   justify-content: space-around;
-
   background-color: rgb(255, 255, 255);
   color: black;
 }
 
 .content {
   display: flex;
-
   justify-content: space-between;
   align-items: baseline;
   padding: 30px;
@@ -38,6 +36,14 @@ body {
   margin-left: 100px;
   margin-top: 30px;
   background-color: rgb(31, 66, 100);
+  border: 2px solid grey;
+  box-shadow: 2px 2px 2px rgb(46, 46, 46);
+}
+
+.header:hover {
+  box-shadow: 1px 1px 1px rgb(88, 88, 88);
+  border: 2px solid rgb(56, 56, 56);
+  transition: box-shadow 0.3s, border 0.3s;
 }
 
 .header img {
@@ -54,6 +60,7 @@ body {
   appearance: none;
   border: none;
   outline: none;
+  box-shadow: none;
   border: 0.2em solid #ffffff;
   background: rgba(#ffffff, 0.2);
   border-radius: 20px;
@@ -71,18 +78,10 @@ body {
   flex-direction: column;
   position: relative;
   top: -100px;
-
   padding: 25px;
-
   background-color: rgb(31, 66, 100);
   border: solid 1px black;
   border-radius: 35px;
-}
-
-.subreddit-list:hover {
-}
-
-.reddits {
 }
 
 @media only screen and (max-width: 1200px) {
@@ -95,13 +94,18 @@ body {
   .header {
     height: 120px;
     width: auto;
-
     display: flex;
     position: sticky;
     top: 0px;
     margin: 0 auto;
+    border: none;
     border-radius: 0;
   }
+
+  .header:hover {
+    border: none;
+  }
+
   .header input {
     height: 30px;
     width: 150px;
@@ -115,7 +119,7 @@ body {
     padding: 0.4em;
     color: #5c5656;
   }
-  .main {
-    width: ;
+  .content {
+    padding: 0 0;
   }
 }
