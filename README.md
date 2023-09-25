@@ -15,6 +15,6 @@ Project was built using React. In project directory:
 
 ## Deploy
 
-[Project deployed on Netify](https://www.google.com)
+[Project deployed on Netlify](https://6511bf427da35600082bf5a3--warm-melba-cce575.netlify.app/)
 
 ### Best Regards

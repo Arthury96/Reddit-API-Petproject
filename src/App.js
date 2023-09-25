@@ -28,7 +28,7 @@ function App() {
       }
     );
   }, [subreddits]);
-
+ // separatly get subreddit list 
   useEffect(() => {
     fetch("https://www.reddit.com/subreddits.json").then((res) => {
       if (res.status !== 200) {
@@ -55,7 +55,8 @@ function App() {
           value={subreddits}
           onChange={(e) => setSubreddits(e.target.value)}
         />
-      </header>
+      </header> 
+      {/* Using map method, to order all content */}
       <section className="content">
         <section className="reddits">
           {reddits != null
