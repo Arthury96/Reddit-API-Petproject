@@ -4,7 +4,7 @@ import "../styles/Reddits.css";
 function Reddit(props) {
   return (
     <div className="reddit">
-      <a className="score">{props.reddit.score}</a>
+      <p className="score">{props.reddit.score}</p>
       <div className="reddit-content">
         <p className="author">Author: {props.reddit.author} </p>
         <a
@@ -21,7 +21,7 @@ function Reddit(props) {
           {props.reddit.media ? <p className="video">Contain Video!</p> : null}
 
           {props.reddit.post_hint === "image" ? (
-            <img src={props.reddit.url} alt="Reddit"></img>
+            <img src={props.reddit.url} alt="reddits"></img>
           ) : null}
           {!props.reddit.thumbnail ? (
             <a className="link" href={props.reddit.url}>
